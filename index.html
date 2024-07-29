@@ -7,9 +7,76 @@
     <link rel="stylesheet" href="resources/css/reset.css">
     <!-- index CSS file -->
     <link rel="stylesheet" href="resources/css/style.css">
+    <!-- lineicons to use icons on text -->
+    <link rel="stylesheet" href="resources/icons/lineicons.css">
     <title>Sebastian Portfolio</title>
 </head>
 <body>
+
+    <header>
+        <h1>SEBASTIAN<br>PEREIRA</h1>
+    </header>
+
+    <nav>
+        <ul class="nav-list">
+            <li id="nav-acerca-de-mi" class="nav-item"><a href="#acerca-de-mi">about me</a></li>
+            <li id="nav-proyectos" class="nav-item"><a href="#proyectos">projects</a></li>
+            <li id="nav-habilidades" class="nav-item"><a href="#habilidades">skills</a></li>
+            <li id="nav-contacto" class="nav-item"><a href="#contacto">contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="acerca-de-mi" class="contenido">
+        <h2 id="acerca-de-mi-titulo" class="contenido-titulo">about me</h2>
+        <div class="block-texto">
+            <p class="contenido-texto">Hello there! My name is Sebastián. I am learning to code with some courses from Codecademy. This website is part of one of the projects from the FSE course.</p>
+        </div>
+    </section>
+
+    <section id="proyectos" class="contenido">
+        <h2 id="proyectos-titulo" class="contenido-titulo">proyectos</h2>
+        <div class="block-sitio">
+            <a href="https://sebapereira111.github.io/fotomatic/" target="_blank">
+                <h3 class="sitio-titulo">Fotomatic</h3>
+                <img class="sitio-img" src="resources/pictures/projects/fotomatic.png" alt="">
+            </a>
+        </div>
+        <div class="block-sitio">
+            <a href="https://sebapereira111.github.io/Responsive-Club-Website/" target="_blank">
+                <h3 class="sitio-titulo">Responsive Club Website</h3>
+                <img class="sitio-img" src="resources/pictures/projects/Responsive-Club-Website.png" alt="">
+            </a>
+        </div>
+        <div class="block-sitio">
+            <a href="https://sebapereira111.github.io/flexbox-business-site/" target="_blank">
+                <h3 class="sitio-titulo">Flexbox business site</h3>
+                <img class="sitio-img" src="resources/pictures/projects/flexbox-business-site.png" alt="">
+            </a>
+        </div>
+    </section>
+
+    <section id="habilidades" class="contenido">
+        <h2 id="habilidades-titulo" class="contenido-titulo">skills</h2>
+        <div class="block-texto">
+            <ul class="contenido-list">
+                <li class="contenido-item"><i class="lni lni-html5"></i></i></li>
+                <li class="contenido-item"><i class="lni lni-css3"></i></i></li>
+                <li class="contenido-item"><i class="lni lni-javascript"></i></li>
+                <li class="contenido-item"><i class="lni lni-git"></i></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+        <h2 id="contacto-titulo" class="contenido-titulo">contact</h2>
+        <div class="block-texto">
+            <p class="contenido-texto">You can find me at</p>
+            <ul class="contenido-list">
+                <li class="contenido-item"><a href="https://github.com/sebapereira111" target="_blank"><i class="lni lni-github-original"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
     <script src="resources/javascript/index.js" defer></script>
 </body>
 </html>
