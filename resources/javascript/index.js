@@ -36,7 +36,7 @@ const showMenuIcon = new IntersectionObserver(
 
 showMenuIcon.observe(nav);
 
-// Animacion de titulos de las secciones
+// Animacion de titulos de las secciones y de los contenidos
 
 const observerContenido = new IntersectionObserver(
   (entries) => {
@@ -56,5 +56,12 @@ for (j = 0 ; j < contenido.length ; j++) {
     observerContenido.observe(contenido[j]);
 }
 
-// Animacion de los contenidos de las secciones
+// Animaacion del cambio de tamaño del viewport
 
+window.addEventListener('resize', function() {
+    let newHeight = window.innerHeight;
+    
+    document.getElementsByTagName('header').style.height = newHeight/2 + 'px';
+    document.getElementsByTagName('nav').style.height = newHeight/2 + 'px';
+    
+  });

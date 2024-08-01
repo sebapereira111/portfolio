@@ -22,17 +22,20 @@ body {
     background-color: var(--background);
 }
 
+
+
 /* ------ */
 /* HEADER */
 /* ------ */
 
 header {
-    height: 50dvh;
+    height: 50vh;
+    transition: height 0.5s ease;
 }
 
 h1 {
-    font-size: 23dvh;
-    line-height: 25dvh;
+    font-size: 23svh;
+    line-height: 25svh;
     text-align: right;
     padding-right: 1vw;
 }
@@ -46,8 +49,8 @@ h1 {
 
 @media screen and (max-aspect-ratio: 7 / 5) {
     h1 {
-      font-size: 17dvh;
-      line-height: 19dvh;
+      font-size: 17svh;
+      line-height: 19svh;
     }
 }
 
@@ -63,11 +66,11 @@ h1 {
 /* --- */
 
 .nav-contenedor {
-    height: 50dvh;
+    height: 50svh;
     width: 100%;
-    padding-top: 20dvh;
-    padding-bottom: 20dvh;
-    
+    padding-top: 20svh;
+    padding-bottom: 20svh;
+    transition: height 0.5s;
 }
 
 .nav-list {
@@ -77,8 +80,8 @@ h1 {
 }
 
 .nav-item {
-    font-size: 9dvh;
-    line-height: 10dvh;
+    font-size: 9svh;
+    line-height: 10svh;
     a {
         color: var(--forecolor);
     }
@@ -95,20 +98,20 @@ h1 {
 
 @media screen and (max-width: 1024px) {
     .nav-item {
-      font-size: 6dvh;
+      font-size: 6svh;
     }
 }
 
 @media screen and (max-width: 385px) {
     .nav-item {
-      font-size: 5dvh;
+      font-size: 5svh;
     }
 }
     
 @media all and (orientation: portrait) {
     nav {
-        padding-top: 5dvh;
-        padding-bottom: 5dvh;
+        padding-top: 5svh;
+        padding-bottom: 5svh;
     }
     .nav-list {
         flex-direction: column;
@@ -230,7 +233,7 @@ h1 {
     transform-origin: top left;
     transform: rotate(-90deg) translateX(-100%) rotateX(90deg);
     text-align: center;
-    width: 100dvh;
+    width: 100svh;
     font-size: 8vw;
     line-height: 10vw;
     transition: transform 1s;
