@@ -58,10 +58,11 @@ for (j = 0 ; j < contenido.length ; j++) {
 
 // Animaacion del cambio de tamaño del viewport
 
-window.addEventListener('resize', function() {
+const resizeElements = function() {
     let newHeight = window.innerHeight;
-    
-    document.getElementsByTagName('header').style.height = newHeight/2 + 'px';
-    document.getElementsByTagName('nav').style.height = newHeight/2 + 'px';
-    
-  });
+    console.log(newHeight);
+    document.querySelector("header").style.height = newHeight/2 + "px";
+    document.querySelector("nav").style.height = newHeight/2 + "px";
+}
+
+window.addEventListener('resize', resizeElements);
