@@ -2,6 +2,7 @@
 /* GENERAL */
 /* ------- */
 
+/* Colors to be used */
 :root {
     --background: #17202A;
     --background-dark: #0c1218;
@@ -135,6 +136,12 @@ h1 {
     }
 }
 
+@media screen and (min-width: 1280px) {
+    .menu {
+        width: 1280px;
+    }
+}
+
 .menu-icono {
     z-index: 100;
     translate: 5rem -5rem;
@@ -186,28 +193,49 @@ h1 {
 .contenido {
     width: 100%;
     min-height: 100lvh;
-    padding: 10% 10% 10% 20%;
+    padding: 10lvh 10lvw 10lvh 20lvw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 25lvh;
+}
+
+@media screen and (min-width: 1280px) {
+    .contenido {
+        padding: 10lvh 128px 10lvh 256px;
+    }
 }
 
 /* Titulo del contenido */
 
 .contenido-titulo {
+    color: var(--forecolor);
     z-index: 50;
     position: fixed;
     top: 0;
     left: 0;
-    color: var(--forecolor);
-    width: 100lvh;
     transform-origin: top left;
     transform: rotate(-90deg) translateX(-100%) rotateX(90deg);
-    transition: transform 1s;
     text-align: center;
+    width: 100dvh;
     font-size: 8vw;
     line-height: 10vw;
-    margin: 0;
+    transition: transform 1s;
+}
+
+@media screen and (min-width: 1280px) {
+    .contenido-titulo {
+        font-size: 102.4px;
+        line-height: 128px;
+    }
+}
+
+@media screen and (min-aspect-ratio: 1280 / 720) {
+    .contenido-titulo {
+        font-size: 14.4svh !important;
+        line-height: 18svh !important;
+    }
 }
 
 .show-titulo {
@@ -234,11 +262,19 @@ h1 {
     font-size: 3rem;
     line-height: 3.5rem;
     margin-bottom: 3.5rem;
+    text-align: start;
+}
+
+#contacto {
+    .contenido-texto {
+        text-align: center;
+    }
 }
 
 .contenido-list {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     column-gap: 6rem;
     justify-content: center;
 }
@@ -249,3 +285,69 @@ h1 {
         color: var(--forecolor);
     }
 }
+
+/* Bloque de proyectos */
+
+.block-sitio {
+    background-color: var(--background-dark);
+    position: sticky;
+    top: 10lvh;
+    aspect-ratio: 896 / 576; /* espacio restante dentro de padding */
+    max-width: 100%;
+    max-height: 80lvh;
+    border-radius: 8% / 12.5%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+@media screen and (min-height: 720px) {
+    .block-sitio {
+        top: calc(10lvh + ((100lvh*0.8)/2 - 288px));
+    }
+}
+
+/* (((100lvh * 0.8)/2)-288px) */
+
+.sitio-titulo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+        font-size: 3rem;
+    }
+    @media screen and (max-height: 480px) {
+        h3 {
+            font-size: 2rem;
+        }
+    }
+    @media screen and (max-height: 320px) {
+        h3 {
+            font-size: 1rem;
+        }
+    }
+    @media screen and (max-width: 950px) {
+        h3 {
+            font-size: 2rem;
+        }
+    }
+    @media screen and (max-width: 700px) {
+        h3 {
+            font-size: 1rem;
+        }
+    }
+}
+
+.sitio-img {
+    display: block;
+    aspect-ratio: 896 / 504;
+    width: 100%;
+}
+
+
+
+/* Animaciones contenidos */
+/* Diseño responsivo */
