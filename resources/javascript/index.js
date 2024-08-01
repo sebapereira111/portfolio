@@ -3,6 +3,8 @@
 const menuIcon = document.querySelector(".menu-icono");
 const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
+const contenido = document.querySelectorAll(".contenido");
+const contenidoTitulo = document.querySelectorAll(".contenido-titulo");
 
 // Menu que se esconde con el botoncito arriba a la derecha
 
@@ -34,23 +36,25 @@ const showMenuIcon = new IntersectionObserver(
 
 showMenuIcon.observe(nav);
 
-//titulos de las secciones
-
-const contenido = document.querySelectorAll(".contenido");
-const contenidoTitulo = document.querySelectorAll(".contenido-titulo");
+// Animacion de titulos de las secciones
 
 const observerContenido = new IntersectionObserver(
   (entries) => {
     for (const entry of entries) {
         if (entry.isIntersecting) {
             entry.target.querySelector("h2").classList.toggle("show-titulo", true);
+            entry.target.classList.toggle("show-contenido", true);
         } else {
             entry.target.querySelector("h2").classList.toggle("show-titulo", false);
+            entry.target.classList.toggle("show-contenido", false);
         }
     }
-  }, { rootMargin: "-49% 0 -49% 0" }
+  }, { rootMargin: "-49% 0% -49% 0%" }
 );
 
 for (j = 0 ; j < contenido.length ; j++) {
     observerContenido.observe(contenido[j]);
 }
+
+// Animacion de los contenidos de las secciones
+
