@@ -41,16 +41,14 @@ const contenidoTitulo = document.querySelectorAll(".contenido-titulo");
 
 const observerContenido = new IntersectionObserver(
   (entries) => {
-    for (let i = 0 ; i < entries.length ; i++) {
-        if (entries[i].isIntersecting) {
-            console.log(i);
-            contenidoTitulo[i].classList.toggle("show-titulo", true);
+    for (const entry of entries) {
+        if (entry.isIntersecting) {
+            entry.target.querySelector("h2").classList.toggle("show-titulo", true);
         } else {
-            contenidoTitulo[i].classList.toggle("show-titulo", false);
+            entry.target.querySelector("h2").classList.toggle("show-titulo", false);
         }
     }
-  }, 
-  { threshold: 0.5 }
+  }, { rootMargin: "-49% 0 -49% 0" }
 );
 
 for (j = 0 ; j < contenido.length ; j++) {
