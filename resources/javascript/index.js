@@ -56,13 +56,22 @@ for (j = 0 ; j < contenido.length ; j++) {
     observerContenido.observe(contenido[j]);
 }
 
-// Animaacion del cambio de tamaño del viewport
+// Cambio del contraste del sitio
 
-const resizeElements = function() {
-    let newHeight = window.innerHeight;
-    console.log(newHeight);
-    document.querySelector("header").style.height = newHeight/2 + "px";
-    document.querySelector("nav").style.height = newHeight/2 + "px";
-}
+const dark = document.querySelector("#dark");
+const light = document.querySelector("#light");
 
-window.addEventListener('resize', resizeElements);
+dark.addEventListener("click", function() {
+    dark.classList.toggle("show-contraste", false);
+    light.classList.toggle("show-contraste", true);
+    document.documentElement.style.setProperty('--background', '#17202A');
+    document.documentElement.style.setProperty('--background-dark', '#0c1218');
+    document.documentElement.style.setProperty('--forecolor', '#D1F2EB');
+});
+light.addEventListener("click", function() {
+    light.classList.toggle("show-contraste", false);
+    dark.classList.toggle("show-contraste", true);
+    document.documentElement.style.setProperty('--background', '#D1F2EB');
+    document.documentElement.style.setProperty('--background-dark', '#9fdccf');
+    document.documentElement.style.setProperty('--forecolor', '#17202A');
+});
