@@ -93,3 +93,5 @@ const changeTheme = function() {
 }
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",changeTheme);
+
+if (window.matchMedia("(prefers-color-scheme: light)").matches) toLight();
