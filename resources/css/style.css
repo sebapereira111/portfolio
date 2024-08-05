@@ -191,12 +191,10 @@ h1 {
 
 @media screen and (orientation: portrait) {
     .menu-icono {
-        left: 0.5rem;
-        translate: -5rem 100dvh;
-        /* bottom position does not work for some reason */
+        translate: -100vw calc(100dvh);
     }
     .show-menu-icono {
-        translate: 0 calc(100vh - 5rem);
+        translate: calc(5rem - 100vw) calc(100dvh - 5rem);
     }
 }
 
