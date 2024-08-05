@@ -192,7 +192,6 @@ h1 {
 @media screen and (orientation: portrait) {
     .menu-icono {
         left: 0.5rem;
-        top: 0.5rem;
         translate: -5rem 100vh;
         /* bottom position does not work for some reason */
     }
