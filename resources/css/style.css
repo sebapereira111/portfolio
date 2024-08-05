@@ -145,11 +145,11 @@ h1 {
 
 .menu-icono {
     z-index: 100;
-    translate: 5rem -5rem;
-    transition: translate 1s;
     position: fixed;
     top: 0.5rem;
     right: 0.5rem;
+    translate: 5rem -5rem;
+    transition: translate 1s;
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -184,6 +184,20 @@ h1 {
 @media screen and (min-width: 1280px) {
     .show-menu-icono {
         translate: calc((1280px - 100vw)/2) 0;
+    }
+}
+
+/* Menu button on mobile relocation to bottom left */
+
+@media screen and (orientation: portrait) {
+    .menu-icono {
+        left: 0.5rem;
+        top: 0.5rem;
+        translate: -5rem 100dvh;
+        /* bottomp position does not work for some reason, may related to translate */
+    }
+    .show-menu-icono {
+        translate: 0 calc(100vh - 5rem);
     }
 }
 
