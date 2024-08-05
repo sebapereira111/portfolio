@@ -193,8 +193,8 @@ h1 {
     .menu-icono {
         left: 0.5rem;
         top: 0.5rem;
-        translate: -5rem 100dvh;
-        /* bottomp position does not work for some reason, may related to translate */
+        translate: -5rem 100vh;
+        /* bottom position does not work for some reason */
     }
     .show-menu-icono {
         translate: 0 calc(100vh - 5rem);
