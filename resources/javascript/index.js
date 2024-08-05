@@ -61,19 +61,35 @@ for (j = 0 ; j < contenido.length ; j++) {
 const dark = document.querySelector("#dark");
 const light = document.querySelector("#light");
 
-dark.addEventListener("click", function() {
+const toDark = function() {
     dark.classList.toggle("show-contraste", false);
     light.classList.toggle("show-contraste", true);
     document.documentElement.style.setProperty('--background', '#17202A');
     document.documentElement.style.setProperty('--background-dark', '#0c1218');
     document.documentElement.style.setProperty('--forecolor', '#D1F2EB');
     document.documentElement.style.setProperty('--menu-color', 'rgba(23, 32, 42, 0.8)');
-});
-light.addEventListener("click", function() {
+}
+
+const toLight = function() {
     light.classList.toggle("show-contraste", false);
     dark.classList.toggle("show-contraste", true);
     document.documentElement.style.setProperty('--background', '#D1F2EB');
     document.documentElement.style.setProperty('--background-dark', '#9fdccf');
     document.documentElement.style.setProperty('--forecolor', '#17202A');
     document.documentElement.style.setProperty('--menu-color', 'rgba(101, 112, 125, 0.9)');
-});
+}
+
+dark.addEventListener("click", toDark);
+light.addEventListener("click", toLight);
+
+// To detect client system theme
+
+const changeTheme = function() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        toDark();
+    } else {
+        toLight();
+    }
+}
+
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",changeTheme);

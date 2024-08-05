@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="resources/css/reset.css">
     <!-- index CSS file -->
     <link rel="stylesheet" href="resources/css/style.css">
-    <!-- lineicons to use icons on text -->
+    <!-- lineicons to use icons as text -->
     <link rel="stylesheet" href="resources/icons/lineicons.css">
+    <link rel="icon" type="image/x-icon" href="resources/icons/favicon.ico">
     <title>Sebastian Portfolio</title>
 </head>
-<body class="">
-
+<body>
+    <!-- On top of the page, the name and a navigation list -->
     <header>
         <h1>SEBASTIAN<br>PEREIRA</h1>
     </header>
-
     <nav class="nav-contenedor">
         <ul class="nav-list">
             <li id="nav-acerca-de-mi" class="nav-item"><a href="#acerca-de-mi">about me</a></li>
@@ -25,7 +25,7 @@
             <li id="nav-contacto" class="nav-item"><a href="#contacto">contact</a></li>
         </ul>
     </nav>
-
+    <!-- The navigation menu is normaly hidden, when opened it has an arrow to go to the top of the page and a navigation list -->
     <div class="menu">
         <a class="flecha" href="#"><i class="lni lni-arrow-up"></i></a>
         <div class="nav-contenedor">
@@ -37,24 +37,26 @@
             </ul>
         </div>
     </div>
-
+    <!-- A small round button to open the navigation menu -->
     <div class="menu-icono">
         <i class="lni lni-menu"></i>
     </div>
-
+    <!-- Button (word) to change contrast (dark or light theme) -->
     <div class="contraste">
         <i id="dark" class="hide-contraste">dark</i><i id="light" class="hide-contraste show-contraste">light</i>
     </div>
-
+    <!-- Start of the content. Is divided in sections (4) -->
     <section id="acerca-de-mi" class="contenido">
+        <!-- Each section has a title -->
         <h2 id="acerca-de-mi-titulo" class="contenido-titulo">about me</h2>
+        <!-- The content can be text -->
         <div class="block-texto">
             <p class="contenido-texto">Hello there! My name is Sebastián. I am learning to code with some courses from Codecademy. This website is part of one of the projects from the FSE course.</p>
         </div>
     </section>
-
     <section id="proyectos" class="contenido">
         <h2 id="proyectos-titulo" class="contenido-titulo">projects</h2>
+        <!-- The content can be websites images -->
         <div class="block-sitio">
             <div class="sitio-titulo">
                 <h3>Fotomatic</h3>
@@ -80,10 +82,10 @@
             </a>
         </div>
     </section>
-
     <section id="habilidades" class="contenido">
         <h2 id="habilidades-titulo" class="contenido-titulo">skills</h2>
         <div class="block-texto">
+            <!-- On the text content ther can be a unordered list -->
             <ul class="contenido-list">
                 <li class="contenido-item"><i class="lni lni-html5"></i></i></li>
                 <li class="contenido-item"><i class="lni lni-css3"></i></i></li>
@@ -92,7 +94,6 @@
             </ul>
         </div>
     </section>
-
     <section id="contacto" class="contenido">
         <h2 id="contacto-titulo" class="contenido-titulo">contact</h2>
         <div class="block-texto">
@@ -104,7 +105,6 @@
             </ul>
         </div>
     </section>
-
     <script src="resources/javascript/index.js" defer></script>
 </body>
 </html>
