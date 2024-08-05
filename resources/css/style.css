@@ -7,7 +7,7 @@
     --background: #17202A;
     --background-dark: #0c1218;
     --forecolor: #D1F2EB;
-
+    --menu-color: rgba(23, 32, 42, 0.8);
 }
 
 html {
@@ -124,7 +124,7 @@ h1 {
     z-index: 100;
     translate: 0 -100%;
     transition: translate 1s;
-    background-color: rgba(23, 32, 42, 0.8);
+    background-color: var(--menu-color);
     height: 100dvh;
     width: 100%;
     max-width: 1280px;
@@ -391,12 +391,12 @@ h1 {
 /* ----------------- */
 
 .contraste {
-    z-index: 50;
+    z-index: 75;
     position: fixed;
     bottom: 0;
     right: 0;
     font-size: 2rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
     &:hover {
         cursor: pointer;
     }

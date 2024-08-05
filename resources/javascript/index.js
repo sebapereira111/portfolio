@@ -67,6 +67,7 @@ dark.addEventListener("click", function() {
     document.documentElement.style.setProperty('--background', '#17202A');
     document.documentElement.style.setProperty('--background-dark', '#0c1218');
     document.documentElement.style.setProperty('--forecolor', '#D1F2EB');
+    document.documentElement.style.setProperty('--menu-color', 'rgba(23, 32, 42, 0.8)');
 });
 light.addEventListener("click", function() {
     light.classList.toggle("show-contraste", false);
@@ -74,4 +75,5 @@ light.addEventListener("click", function() {
     document.documentElement.style.setProperty('--background', '#D1F2EB');
     document.documentElement.style.setProperty('--background-dark', '#9fdccf');
     document.documentElement.style.setProperty('--forecolor', '#17202A');
+    document.documentElement.style.setProperty('--menu-color', 'rgba(101, 112, 125, 0.9)');
 });
