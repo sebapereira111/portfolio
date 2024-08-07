@@ -2,7 +2,7 @@
 /* GENERAL */
 /* ------- */
 
-/* Colors to be used */
+/* Colors to be used as variables so can be changed in one place. Also in JS */
 :root {
     --background: #17202A;
     --background-dark: #0c1218;
@@ -17,6 +17,7 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* The max-width is used for a better visual organization/display of the site */
 body {
     max-width: 1280px;
     margin: auto;
@@ -26,6 +27,8 @@ body {
 /* ------ */
 /* HEADER */
 /* ------ */
+
+/* On landing page there is the header and nav list. svh used for mobile */
 
 header {
     height: 50svh;
@@ -120,6 +123,8 @@ h1 {
 /* MENU */
 /* ---- */
 
+/* Menu is located on top of everithing. It is moved (translate) above the screen when not shown */
+/* It is positioned on top of everything */
 .menu {
     z-index: 100;
     translate: 0 -100%;
@@ -143,6 +148,17 @@ h1 {
     }
 }
 
+/* To show menu, it is tranlated to its original position */
+.show-menu {
+    translate: 0 0;
+}
+
+/* When menu is shown, the scroll is disabled from body */
+.show-scroll {
+    overflow: hidden;
+}
+
+/* Menu icon appears when nav list form landing page dissapears. Is a circle div with an icon */
 .menu-icono {
     z-index: 100;
     position: fixed;
@@ -167,20 +183,13 @@ h1 {
     }
 }
 
-/* must be on menu div and body to show the menu */
-
-.show-menu {
-    translate: 0 0;
-}
-
-.show-scroll {
-    overflow: hidden;
-}
-
+/* menu-icon is located fixed on top-right corner. It is translated outside screen to be hidden and 
+moved (translate) to its original position to be shown */
 .show-menu-icono {
     translate: 0 0;
 }
 
+/* When screen (viewport) is wider than 1280px position for menu-icono has to be calculated to be inside the 1280px body used */
 @media screen and (min-width: 1280px) {
     .show-menu-icono {
         translate: calc((1280px - 100vw)/2) 0;
@@ -188,7 +197,7 @@ h1 {
 }
 
 /* Menu button on mobile relocation to bottom left */
-
+/* Shown and hidden position are changed to appear from and be show on left bottom corner */
 @media screen and (orientation: portrait) {
     .menu-icono {
         translate: -100vw calc(100dvh);
@@ -202,6 +211,7 @@ h1 {
 /* CONTENIDO */
 /* --------- */
 
+/* Content section includes the padding (larger on the left to acomodate title) and flex to center content */
 .contenido {
     width: 100%;
     min-height: 100lvh;
@@ -212,20 +222,22 @@ h1 {
     align-items: center;
     row-gap: 25lvh;
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 1s;
 }
 
+/* Used to animate fade in animation on content */
 .show-contenido {
     opacity: 1;
 }
 
+/* When screen (viewport) width is more than 1280px body limits width to 1280px so padding is fixed in that direction */
 @media screen and (min-width: 1280px) {
     .contenido {
         padding: 10lvh 128px 10lvh 256px;
     }
 }
 
-/* Titulo del contenido */
+/* Content title */
 
 .contenido-titulo {
     color: var(--forecolor);
@@ -233,16 +245,19 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
+    /* Change point of reference for transform */
     transform-origin: top left;
-    transform: rotate(-90deg) translateX(-100%) rotateX(90deg);
+    /* Located vertically on the side and rotated to 90deg from the screen plane (rotateX)*/
+    transform: rotateZ(-90deg) translateX(-100%) rotateX(90deg);
     text-align: center;
+    /* because of "rotateZ(-90deg)" the width is aligned to the height of the viewport */
     width: 100dvh;
-    transition: width 0.2s;
     font-size: 8vw;
     line-height: 10vw;
     transition: transform 1s;
 }
 
+/* Sizes calculated to use most of the left 10% of the screen */
 @media screen and (min-width: 1280px) {
     .contenido-titulo {
         font-size: 102.4px;
@@ -257,11 +272,16 @@ h1 {
     }
 }
 
+/* to show the title rotateX is removed */
 .show-titulo {
     transform: rotate(-90deg) translateX(-100%);
 }
 
+/* When screen is above 1280px the body is limited to that so some calculations have to be done */
 @media screen and (min-width: 1280px) {
+    .contenido-titulo {
+        transform: rotateZ(-90deg) translateX(-100%) translateY(calc((100vw - 1280px)/2)) rotateX(90deg);
+    }
     .show-titulo {
         transform: rotate(-90deg) translateX(-100%) translateY(calc((100vw - 1280px)/2));
         font-size: 102.4px;
@@ -271,6 +291,7 @@ h1 {
 
 /* Bloque de texto */
 
+/* Block text dimensions and sizes depend on different screen sizes */
 .block-texto {
     background-color: var(--background-dark);
     padding: 3rem;
@@ -335,7 +356,8 @@ h1 {
     background-color: var(--background-dark);
     position: sticky;
     top: 10lvh;
-    aspect-ratio: 896 / 576; /* espacio restante dentro de padding */
+    /* Aspect ratio is calculated with max size posible */
+    aspect-ratio: 896 / 576;
     max-width: 100%;
     max-height: 80lvh;
     border-radius: 8% / 12.5%;
@@ -410,6 +432,12 @@ h1 {
     line-height: 2.5rem;
     &:hover {
         cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .contraste {
+        right: calc((100vw - 1280px)/2);
     }
 }
 
