@@ -11,27 +11,20 @@ const menu = document.querySelector(".menu");
 // The nav from the top of the page
 const nav = document.querySelector("nav");
 
-// To show the menu
-function openMenu() {
-    // Scroll is disabled on body
-    document.body.classList.toggle("show-scroll", true);
-    // Menu is shown (moved from above viewport to in front of it)
-    menu.classList.toggle("show-menu", true);
-    // Menu icon is hidden (on the same corner but outside the viewport)
-    menuIcon.classList.toggle("show-menu-icono", false);
+// The function shows the menu and hides menu icon (receives a paramater true/false)
+function mostrarMenu(activar) {
+    // Disables/enables scroll on body
+    document.body.classList.toggle("show-scroll", activar);
+    // Show/hides menu
+    menu.classList.toggle("show-menu", activar);
+    // Hides/show menu-icon
+    menuIcon.classList.toggle("show-menu-icono", !activar);
 }
 
-// To hide the menu (The oposite of openMenu is done)
-function closeMenu() {
-    document.body.classList.toggle("show-scroll", false);
-    menu.classList.toggle("show-menu", false);
-    menuIcon.classList.toggle("show-menu-icono", true);
-}
-
-// When menu icon is clicked the menu is opened
-menuIcon.addEventListener("click", openMenu);
-// When the menu is clicked the menu is closed
-menu.addEventListener("click", closeMenu);
+// When menu icon is clicked the menu is opened and menu icon hidden
+menuIcon.addEventListener("click", () => {mostrarMenu(true);});
+// When the menu is clicked the menu is closed and menu icon shown
+menu.addEventListener("click", () => {mostrarMenu(false);});
 
 // The menu icon is shown when 70% of nav is outside the screen
 const showMenuIcon = new IntersectionObserver(
