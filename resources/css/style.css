@@ -109,7 +109,7 @@ h1 {
 }
     
 @media all and (orientation: portrait) {
-    nav {
+    .nav-contenedor {
         padding-top: 5svh;
         padding-bottom: 5svh;
     }
