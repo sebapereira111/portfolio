@@ -1,4 +1,4 @@
-# Codecademy FSE project Portfolio v2 Website
+# Codecademy FSE project Portfolio Website
 
 This is a portfolio website build as a project for the FSE course on Codecademy. This is the second version of this project/site.
 
